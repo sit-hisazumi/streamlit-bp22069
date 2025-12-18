@@ -3,7 +3,7 @@
 
 **複数のStreamlitアプリケーション開発用テンプレート**
 
-GitHub CodespacestとVSCodeでの開発に最適化された、複数のStreamlitアプリを効率的に管理できるテンプレートプロジェクトです。
+GitHub CodespacesとVSCodeでの開発に最適化された、複数のStreamlitアプリを効率的に管理できるテンプレートプロジェクトです。
 
 ## 🚀 クイックスタート
 
@@ -39,17 +39,14 @@ streamlit run hello_world.py
 
 ```
 streamlit-template/
-├── hello_world.py             # メインアプリ
-├── app.py                     # 製造ライン稼働状況ダッシュボード
+├── hello_world.py             # サンプルアプリ（Hello World）
 ├── block_editor.py            # TUIプログラミング言語ブロックエディター
-├── data/                      # データファイル
-├── utils/                     # 共通ユーティリティ関数
-├── scripts/                   # 管理・自動化スクリプト
 ├── .devcontainer/             # GitHub Codespaces設定
 ├── .vscode/                   # VSCode設定
 ├── .streamlit/                # Streamlit設定・シークレット
 ├── pyproject.toml             # プロジェクト設定（uv対応）
 ├── requirements.txt           # pip互換依存関係
+├── requirements-dev.txt       # 開発用依存関係
 └── .gitignore                 # Git除外設定
 ```
 
@@ -57,18 +54,16 @@ streamlit-template/
 
 ### 含まれるアプリケーション
 
-#### 1. 製造ライン稼働状況ダッシュボード（app.py）
-製造設備の稼働状況を可視化するダッシュボードです。
+#### 1. Hello World（hello_world.py）
+シンプルなStreamlitアプリの例です。
 
 ```bash
-streamlit run app.py
+streamlit run hello_world.py
 ```
 
 **機能:**
-- 3つの設備の稼働状況表示（プレス機A、組立ラインB、検査機C）
-- 稼働率に応じた色分け（緑/黄/赤）
-- カード形式の見やすいUI
-- 全体統計とデータテーブル
+- 名前を入力するとメッセージを表示
+- Streamlitの基本的な使い方のサンプル
 
 #### 2. TUIプログラミング言語ブロックエディター（block_editor.py）
 教育向けプログラミング言語のブロックをカスタマイズできるビジュアルエディターです。
@@ -103,9 +98,8 @@ if name:
 
 ```bash
 # 異なるポートで複数アプリを同時実行
-streamlit run app.py --server.port 8501 &
+streamlit run hello_world.py --server.port 8501 &
 streamlit run block_editor.py --server.port 8502 &
-streamlit run hello_world.py --server.port 8503 &
 ```
 
 ## 🛠️ 開発環境
