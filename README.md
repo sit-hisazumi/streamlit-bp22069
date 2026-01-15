@@ -49,33 +49,75 @@ streamlit-template/
 └── .gitignore                 # Git除外設定
 ```
 
-## 🎯 使用方法
+## 🎯 サンプルアプリケーション
 
-### サンプルアプリ（hello_world.py）
+### sample1: 製造ライン稼働状況ダッシュボード
 
-シンプルなStreamlitアプリの例です。
+```bash
+streamlit run sample1/app.py
+```
+
+製造ラインの設備稼働率をリアルタイムで監視するダッシュボード。
+
+- 設備ごとの稼働率カード表示（稼働中/注意/停止の状態表示）
+- 過去24時間の稼働率推移グラフ（Altair）
+- CSVファイルからのデータ読み込み対応
+
+---
+
+### sample2: センサーモニタリングダッシュボード
+
+```bash
+streamlit run sample2/app.py
+```
+
+温度・湿度・CO2濃度などのセンサーデータを監視するダッシュボード。
+
+- リアルタイムセンサー値の表示（正常/警告の状態判定）
+- 適正範囲を可視化したグラフ表示
+- 表示期間の切り替え（1時間〜12時間）
+- 統計情報（最高/最低/平均値）
+- 5秒ごとの自動更新オプション
+
+---
+
+### sample3: 絵文字キャンバス
+
+```bash
+streamlit run sample3/app.py
+```
+
+絵文字を使ってドット絵を作成できるツール。
+
+- 8x8〜24x24のキャンバスサイズ
+- 8カテゴリの絵文字パレット（自然、動物、食べ物、天気、顔、乗り物、建物、記号）
+- クリア・元に戻す・塗りつぶし機能
+- テキスト形式でのエクスポート
+
+---
+
+### sample4: カラーパレット生成器
+
+```bash
+streamlit run sample4/app.py
+```
+
+配色理論に基づいたカラーパレットを生成するツール。
+
+- 6種類の配色タイプ（ランダム、類似色、補色、トライアド、モノクロマティック、分裂補色）
+- ベースカラーの選択、色数の調整（3〜8色）
+- プレビュー（グラデーション、UIサンプル、テキスト）
+- エクスポート（HEX、CSS変数、Tailwind設定）
+
+---
+
+### hello_world.py
 
 ```bash
 streamlit run hello_world.py
 ```
 
-**機能:**
-- 名前を入力するとメッセージを表示
-- Streamlitの基本的な使い方のサンプル
-
-### 新しいアプリの作成
-
-```python
-# my_new_app.py
-import streamlit as st
-
-st.title("My New App 🚀")
-st.write("Hello, Streamlit!")
-
-name = st.text_input("Your name:")
-if name:
-    st.success(f"Hello, {name}!")
-```
+シンプルなStreamlitアプリの例。名前を入力するとメッセージを表示。
 
 ## 🛠️ 開発環境
 
